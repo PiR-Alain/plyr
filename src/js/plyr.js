@@ -1769,7 +1769,10 @@
                         plyr.media.muted = instance.isMuted();
 
                         // Set title
-                        config.title = instance.getVideoData().title;
+                        config.title = '';
+                        if(instance.getVideoData) {
+                            config.title = instance.getVideoData().title;
+                        }
 
                         // Set the tabindex
                         if (plyr.supported.full) {
